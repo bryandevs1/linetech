@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&display=swap');
+
+.w-100 {
+    width:130px;
+    transform: scale(4);
+  }
+  
+  .link:hover {
+    text-decoration: underline;
+  }
+  
+  .channels {
+    background-color: #2f3136;
+  }
+  
+  .chaneelsh2 {
+    background-color: #34373c;
+  }
+  
+  .servebg {
+    background-color: #202225;
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-y: hidden;
+  }
+  
+  .channeltext {
+    color: #8e9297;
+  }
+  
+  .font {
+    font-family: 'Sen', sans-serif;
+  }
+  
+  .h-83vh {
+    height: 83vh;
+  }
+  
+  .server-default {
+    height: 46px;
+    background-color: #36393f;
+    border-radius: 9999px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+  
+  w-18 {
+    width: 72px;
+  }
+  
+  .circ {
+    border-radius: 50%;
+  }
+  
+  .server-default:hover {
+    border-radius: 16px;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 100ms;
+  }
+  

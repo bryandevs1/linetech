@@ -1,0 +1,59 @@
+import React from 'react';
+import { Bars3BottomRightIcon } from '@heroicons/react/24/solid';
+import log from '../assets/logo.png';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { Navigate, useNavigate } from 'react-router-dom';
+import { auth } from '../firebase.js';
+import { provider } from '../firebase.js';
+
+function Header() {
+
+  const [user] = useAuthState(auth);
+  const navigate = useNavigate();
+
+  const signIn = (e) => {
+    e.preventDefault();
+
+    auth
+    .signInWithPopup(provider)
+    .then(() => navigate("/channels"))
+    .catch((error) => alert(error.message));
+  };
+
+  return (
+    <header className='flex items-center justify-between py-4 px-6 bg-black font'>
+      <a href="/">
+      <img 
+      src={log}
+      alt='logo'
+      className=' max-sm:hidden lg:ml-10 h-12 object-contain w-100 cursor-pointer l-10 -mr-10'
+      />
+      <img 
+      src={log}
+      alt='logo'
+      className=' lg:hidden lg:-m-5 lg:ml-10 h-12 object-contain w-100 cursor-pointer l-10 -mr-10'
+      />
+      </a>
+      <div className='cursor-pointer hidden lg:flex space-x-6 text-white ml-11 font'>
+        <a className='link' href> Download </a>
+        <a className='link' href> Why LineTech </a>
+        <a className='link' href> Buy Nitro </a>
+        <a className='link'href> Safety </a>
+        <a className='link' href> Support </a>
+      </div>
+      
+      <div className='flex space-x-4'>
+        <button className='bg-white p-2 rounded-full text-xs md:text-sm px-4 focus:outline-none hover:shadow-2xl hover:text-purple-400 transition duration-200 ease-in-out wbitespace-nowrap font-medium'
+        onClick={!user ? signIn : () => navigate("/channels")}>
+        {!user ? "Login" : "Open LineTech"}
+        </button>
+      
+      <Bars3BottomRightIcon className='h-9 text-white cursor-pointer lg:hidden' />
+      </div>
+    </header>
+  )
+} 
+
+export default Header
+
+ 
