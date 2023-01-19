@@ -4,6 +4,16 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&display=swap');
 
+@layer components {
+  .icon {
+    @apply h-6 text-white cursor-pointer
+    hover:text-gray-300
+  }
+}
+
+.chatBg {
+  background-color: #36393f;
+}
 .w-100 {
     width:130px;
     transform: scale(4);
@@ -13,6 +23,13 @@
     text-decoration: underline;
   }
   
+
+  .transit {
+    transition: ease-in-out;
+    transition-duration: 5s;
+    transition-delay: 1s;
+  }
+
   .channels {
     background-color: #2f3136;
   }
@@ -20,16 +37,16 @@
   .chaneelsh2 {
     background-color: #34373c;
   }
+
+  .userdeets {
+    background-color: #25272c;
+    width: 107px;
+  }
   
   .servebg {
     background-color: #202225;
   }
   
-  .scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    overflow-y: hidden;
-  }
   
   .channeltext {
     color: #8e9297;

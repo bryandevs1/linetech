@@ -1,6 +1,7 @@
 import React from 'react';
 import { Bars3BottomRightIcon } from '@heroicons/react/24/solid';
 import log from '../assets/logo.png';
+import phlog from '../assets/logown.png'
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { auth } from '../firebase.js';
@@ -26,12 +27,12 @@ function Header() {
       <img 
       src={log}
       alt='logo'
-      className=' max-sm:hidden lg:ml-10 h-12 object-contain w-100 cursor-pointer l-10 -mr-10'
+      className=' md:ml-10 max-sm:hidden lg:ml-10 h-12 object-contain w-100 cursor-pointer l-10 -mr-10'
       />
       <img 
-      src={log}
+      src={phlog}
       alt='logo'
-      className=' lg:hidden lg:-m-5 lg:ml-10 h-12 object-contain w-100 cursor-pointer l-10 -mr-10'
+      className=' md:hidden -mr-20 lg:hidden lg:m-5 lg:ml-5 h-6 object-contain w-100 cursor-pointer left-10 -mr-10'
       />
       </a>
       <div className='cursor-pointer hidden lg:flex space-x-6 text-white ml-11 font'>
