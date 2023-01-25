@@ -2,11 +2,27 @@ import { CloudArrowDownIcon, GlobeAltIcon } from '@heroicons/react/24/solid'
 import React from 'react'
 import pic1 from '../assets/pic2.png'
 import pic2 from '../assets/pic4.png'
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { Navigate, useNavigate } from 'react-router-dom';
+import { auth } from '../firebase.js';
+import { provider } from '../firebase.js';
 
 
 function Hero() {
+
+  const [user] = useAuthState(auth);
+  const navigate = useNavigate();
+
+  const signIn = (e) => {
+    e.preventDefault();
+
+    auth
+    .signInWithPopup(provider)
+    .then(() => navigate("/channels"))
+    .catch((error) => alert(error.message));
+  };
   return (
-    <div className='bg-black pb-8 md:pb-0 text-white font'>
+    <div className='bg-black pb-8 md:pb-0 text-white font h-screen'>
       <div className='p-7 py-9 max-h-full md:h-83 md:flex relative'>
         <div className='flex flex-col gap-7 md:max-w-md lg:max-w-none lg:justify-center'>
             <h1 className='text-5xl text-white font-bold'>Imagine a place...</h1>
@@ -19,7 +35,9 @@ function Hero() {
 
         <button className=' bg-white text-black w-72 font-semibold flex items-center justify-center rounded-full p-4
         hover:shadow-2xl hover:text-blue-600 focus:outline-none transition duration-200 ease-in-out'>
-        <GlobeAltIcon className='mr-2 w-5'/>
+        <GlobeAltIcon className='mr-2 w-5'
+        onClick={!user ? signIn : () => navigate("/channels")}
+        />
         Open Ivictus in your browser</button>
         </div>
         </div>

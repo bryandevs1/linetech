@@ -62,7 +62,7 @@ function Home() {
   return (
     <>
       {!user && <Navigate to={"/"} />}
-      <div className="flex h-screen min-w-3xl">
+      <div className="flex max-h-screen min-w-3xl">
         <div className="flex flex-col space-y-4 servebg p-3 w-20">
           <div className="server-default hover:bg-blue-700 h-11 w-11 ml-1">
             <img src={pic2} alt="pic2" className="h-14 w-18 scale-50" />

@@ -39,7 +39,7 @@ function Chat() {
             db.collection('channels').doc(channelId).collection('messages').add({
                 message: inputRef.current.value,
                 timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-                name: user?.displayName,
+                user: user?.displayName,
                 userImage: user?.photoURL,
                 email: user?.email,
             })
@@ -80,13 +80,13 @@ function Chat() {
         </header>
         <main className='flex-grow overflow-y-scroll scrollbar-hide'>
             {messages?.docs.map((doc) => {
-                const { message, timestamp, user, userImage, email } = doc.data();
+                const { message, timestamp, name, userImage, email } = doc.data();
                 return <Message 
                 key={doc.id} 
                 id={doc.id}
                 message={message}
                 timestamp={timestamp}
-                name={user}
+                name={name}
                 userImage={userImage}
                 email={email} 
                 />;
