@@ -7,6 +7,7 @@ import TeamChannelList from './TeamChannelList'
 import HospitalIcon from '../assets/hospital.png'
 import LogoutIcon from '../assets/logout.png'
 import '../App.css'
+import { Navigate, useNavigate } from 'react-router'
 
 const cookies = new Cookies();
 
@@ -26,7 +27,9 @@ const SideBar = ({logout}) => (
 );
 
 
-const ChannelListContainer = () => {
+const ChannelListContainer = ({ isCreating, setIsCreating, setCreateType, setIsEditing }) => {
+
+  const navigate = useNavigate();
 
   const logout = () => {
     cookies.remove('token');
@@ -37,6 +40,7 @@ const ChannelListContainer = () => {
     cookies.remove('profilePicture');
     cookies.remove('hashedPassword');
 
+    navigate('/', { replace: true });
     window.location.reload();
   }
   return (
@@ -54,6 +58,10 @@ const ChannelListContainer = () => {
             <TeamChannelList
               {...listProps}
               type="team"
+              isCreating={isCreating}
+              setIsCreating={setIsCreating}
+              setCreateType={setCreateType}
+              setIsEditing={setIsEditing}
             />
           )}
           Preview={(previewProps) => (
@@ -70,6 +78,10 @@ const ChannelListContainer = () => {
             <TeamChannelList
               {...listProps}
               type="messaging"
+              isCreating={isCreating}
+              setIsCreating={setIsCreating}
+              setCreateType={setCreateType}
+              setIsEditing={setIsEditing}
             />
           )}
           Preview={(previewProps) => (

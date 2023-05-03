@@ -9,9 +9,10 @@ import ChannelListContainer from './components/ChannelListContainer';
 import ChannelContainer from './components/ChannelContainer';
 import Auth from './components/Auth.js'
 import Header from './components/Header';
-import { Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Hero from './components/Hero';
 import AppRoutes from './Router';
+
 
 const apikey = 'wnvvtsbumjmz'
 
@@ -32,29 +33,31 @@ if (authToken) {
   }, authToken);
 }
 
-function App() {
+function App2() {
 
   const [createType, setCreateType] = useState('');
   const [isCreating, setIsCreating] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
-
-  if (!authToken) return <><Header /> <Hero /> </>
-
   return (
-      
-       <div className="app__wrpper">
-        <Routes>
-            {AppRoutes.map((route) => (
-              <Route
-                path={route.path}
-                element={route.element}
-                key={route.path}
-              />
-            ))}
-          </Routes>
+    <div className="app__wrapper">
+        <Chat client={chatClient} theme="team light">
+               <ChannelListContainer
+          isCreating={isCreating}
+          setIsCreating={setIsCreating}
+          setCreateType={setCreateType}
+          setIsEditing={setIsEditing}
 
+        />
+        <ChannelContainer           
+          isCreating={isCreating}
+          setIsCreating={setIsCreating}
+          isEditing={isEditing}
+          setIsEditing={setIsEditing}
+          createType={createType}
+          />
+      </Chat>
     </div>
-  );
+    );
 }
-
-export default App;
+    
+export default App2;

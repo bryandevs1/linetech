@@ -7,12 +7,16 @@ import BackgroundImage from '../assets/signup.jpg'
 // import BackgroundImage1 from '../../assets/Home_assets/Header.webp'
 
 import signInImage from '../assets/signup.jpg';
+import { useNavigate } from 'react-router'
+
 
 const initialState = { fullName: '', userName: '', phoneNumber: '', profilePicture: '', password: '', confirmPassword: ''}
 
 const cookies = new Cookies();
 
 const Auth = () => {
+    const navigate = useNavigate();
+
 
     const [form, setForm] = useState(initialState);
 
@@ -37,6 +41,9 @@ const Auth = () => {
 
             fullName, userName, phoneNumber, profilePicture, password
         });
+        //how do i alert users if incorrect details are provided in the sign in form react?
+        
+
 
         cookies.set('token', token);
         cookies.set('userName', userName);
@@ -48,6 +55,8 @@ const Auth = () => {
             cookies.set('hashedPassword', hashedPassword);
             cookies.set('phoneNumber', phoneNumber);
         }
+
+        navigate('/:channelType/:channelId', { replace: true });
 
         window.location.reload();
     }
