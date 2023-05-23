@@ -12,7 +12,7 @@ const AppRoutes = [
     element: <><Header /> <Hero /> </>,
   },
   {
-    path: "/auth",
+    path: "/signIn",
     element: <Auth />
   },
   {

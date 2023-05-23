@@ -38,7 +38,7 @@ function App() {
   const [isCreating, setIsCreating] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
 
-  if (!authToken) return <><Header /> <Hero /> </>
+  // if (!authToken) return <><Header /> <Hero /> </>
 
   return (
       

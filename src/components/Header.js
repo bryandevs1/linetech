@@ -38,7 +38,7 @@ function Header() {
       </div>
       
       <div className='flex space-x-4'>
-        <Link to='/auth'>
+        <Link to='/signIn'>
         <button className='bg-white p-2 rounded-full text-xs md:text-sm px-4 focus:outline-none hover:shadow-2xl hover:text-purple-400 transition duration-200 ease-in-out wbitespace-nowrap font-medium'
         // onClick={handleClick}
         >
