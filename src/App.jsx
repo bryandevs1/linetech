@@ -13,7 +13,7 @@ import { Router, Routes, Route } from 'react-router-dom';
 import Hero from './components/Hero';
 import AppRoutes from './Router';
 
-const apikey = 'wnvvtsbumjmz'
+const apikey = '6pyp75rncs5p'
 
 const chatClient = StreamChat.getInstance(apikey);
 
