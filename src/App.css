@@ -358,7 +358,7 @@ body {
 .channel__container {
   height: 100%;
   width: 100%;
-  background-color: ;
+  padding-left: 10px;
 }
 
 .str-chat__thread {
@@ -1016,7 +1016,7 @@ body {
 
 .team-channel-list__message {
   color: #ffffff;
-  padding: 0 16px;
+  padding: 10px 16px;
 }
 
 .team-channel-list__message.loading {

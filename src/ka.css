@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&display=swap');
+
+
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +9,7 @@
   
   body,
   input {
-    font-family: "Poppins", sans-serif;
+    font-family: "Sen", sans-serif;
   }
   
   .container {
@@ -52,6 +55,7 @@
   form.sign-up-form {
     opacity: 0;
     z-index: 1;
+    margin-bottom: 20px;
   }
   
   form.sign-in-form {
@@ -271,14 +275,17 @@
   
   @media (max-width: 870px) {
     .container {
-      min-height: 800px;
-      height: 100vh;
+      min-height: 950px;
+      height: 100%;
+      margin-bottom: 20px;
     }
     .signin-signup {
       width: 100%;
       top: 95%;
       transform: translate(-50%, -100%);
       transition: 1s 0.8s ease-in-out;
+      margin-bottom: 20px;
+
     }
   
     .signin-signup,
@@ -297,6 +304,7 @@
       align-items: center;
       padding: 2.5rem 8%;
       grid-column: 1 / 2;
+
     }
   
     .right-panel {
@@ -305,6 +313,7 @@
   
     .left-panel {
       grid-row: 1 / 2;
+
     }
   
     .image {
@@ -314,6 +323,8 @@
     }
   
     .panel .content {
+      margin-bottom: 20px;
+
       padding-right: 15%;
       transition: transform 0.9s ease-in-out;
       transition-delay: 0.8s;

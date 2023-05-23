@@ -142,7 +142,7 @@ const Auth = () => {
         <div ref={containerRef} class="container">
         <div class="forms-container">
           <div class="signin-signup">
-          <form onSubmit={handleSignUp} class="sign-up-form">
+          <form onSubmit={handleSignUp} class="sign-up-form mb-18">
               <h2 class="title">Sign up</h2>
               <div class="input-field">
                 <FontAwesomeIcon icon={faCircleUser} className='m-5 top-3 left-3' />
@@ -205,13 +205,12 @@ const Auth = () => {
         </div>
   
         <div class="panels-container">
-          <div class="panel left-panel">
+          <div class="panel left-panel max-md:-mt-10">
             <div class="content">
-              <img src={pic2}></img>
+              <img src={pic2} className='max-md:w-80'></img>
               <h3></h3>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
-                ex ratione. Aliquid!
+              <p className='-mt-2'>
+              Ah, a dazzling newcomer has graced our digital doorstep! Simply Click below to join us
               </p>
               <button ref={signUpBtnRef} class="btn transparent sign-up-btn">
                 Sign up
@@ -220,12 +219,11 @@ const Auth = () => {
             <img src="img/log.svg" class="image" alt="" />
           </div>
           <div class="panel right-panel">
-            <div class="content">
-            <img src={pic1}></img>
+            <div class="content max-md:absolute bottom-0 mt-10 ">
+            <img src={pic1} className='max-md:justify-center items-center max-md:ml-[30vw] max-md:mb-3 max-md:w-32'></img>
               <h3>One of us ?</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-                laboriosam ad deleniti.
+              <p className='text-xs bottom-0'>
+              Sign in, and let the magic of our shared experiences envelop you anew!
               </p>
               <button ref={signInBtnRef} class="btn transparent sign-in-btn">
                 Sign in
