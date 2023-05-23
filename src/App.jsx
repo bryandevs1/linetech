@@ -1,6 +1,6 @@
 import logo from './logo.svg';
-import './App.css';
 import 'stream-chat-react/dist/css/index.css'
+import './App.css';
 import { useState } from 'react';
 import { StreamChat } from 'stream-chat';
 import { Chat } from 'stream-chat-react';
