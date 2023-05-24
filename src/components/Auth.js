@@ -84,8 +84,7 @@ const Auth = () => {
       e.preventDefault();
     
       const { userName, password } = form;
-      // const URL = 'https://serverr-tau.vercel.app/auth';
-      const URL = 'https://localhost:5000/auth';
+      const URL = 'https://serverr-tau.vercel.app/auth';
     
       try {
         const { data: { token, userId, fullName } } = await axios.post(`${URL}/signin`, {
