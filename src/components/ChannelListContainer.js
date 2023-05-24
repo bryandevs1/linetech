@@ -8,6 +8,7 @@ import HospitalIcon from '../assets/logowp.png'
 import LogoutIcon from '../assets/logout.png'
 import "stream-chat-react/dist/css/index.css"
 import '../App.css'
+import pic1 from '../assets/logown.png'
 import { Navigate, useNavigate } from 'react-router'
 import { initialState } from 'stream-chat-react/dist/components/Channel/channelState'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -134,7 +135,8 @@ const ChannelListContainer = ({ setCreateType, setIsCreating, setIsEditing}) => 
       <div className='channel-list__container-responsive'
       style={{left: toggleContainer ? '0%' : '-89%', backgroundColor: '#000'}}>
        
-      <div className='channel-list__container-toggle' onClick={() => setToggleContainer((prevToggleContainer) => !prevToggleContainer)}></div>
+      <div className='channel-list__container-toggle' onClick={() => setToggleContainer((prevToggleContainer) => !prevToggleContainer)}> <img src={pic1} className='' /></div>
+      
       <ChannelListContent
         setIsCreating={setIsCreating}
         setCreateType={setCreateType}
